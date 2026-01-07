@@ -2,7 +2,7 @@
 
 Multi-Clock is a lightweight, aesthetically pleasing Windows 11 system tray application that renders a customizable analog clock.
 
-<img src="app_icon.jpg" alt="App Icon" width="200"/>
+<img src="./MultiClock/app_icon.jpg" alt="App Icon" width="200"/>
 
 ## Features
 

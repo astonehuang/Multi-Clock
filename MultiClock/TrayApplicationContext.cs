@@ -33,8 +33,6 @@ public class TrayApplicationContext : ApplicationContext
 
         // Create NotifyIcon
         notifyIcon = new NotifyIcon();
-        // Create NotifyIcon
-        notifyIcon = new NotifyIcon();
         try
         {
             if (File.Exists("app_icon.ico"))
@@ -63,10 +61,12 @@ public class TrayApplicationContext : ApplicationContext
             notifyIcon.Icon = SystemIcons.Application;
         } 
         notifyIcon.ContextMenuStrip = contextMenu;
+        
+        // Finalize
+        notifyIcon.Text = null; // Ensure null to suppress tooltip entirely if possible, though property might enforce string
+        // Actually, let's just use string.Empty property, but set it BEFORE visibility.
+        notifyIcon.Text = string.Empty;
         notifyIcon.Visible = true;
-        notifyIcon.ContextMenuStrip = contextMenu;
-        notifyIcon.Visible = true;
-        notifyIcon.Text = ""; // explicitly empty to avoid tooltip
 
         // Events
         notifyIcon.MouseMove += NotifyIcon_MouseMove;
